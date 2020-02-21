@@ -10,6 +10,9 @@ import com.google.common.net.UrlEscapers;
 
 import org.apache.commons.io.IOUtils;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class GeoLocator {
 
     public static final String GEOLOCATOR_SERVICE_URI = "http://ip-api.com/json/";
@@ -41,6 +44,10 @@ public class GeoLocator {
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
+    }
+
+    public String toString() {
+        return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
     }
 
 }
